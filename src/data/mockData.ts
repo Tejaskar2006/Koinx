@@ -3,13 +3,13 @@ import type { Holding, CapitalGainsResponse, HoldingsResponse } from '../types';
 // ============================================================
 // Mock Holdings Data
 // Net gain = stcg.gain + ltcg.gain
-// Assets marked ✅ have net negative gain → harvesting them REDUCES tax (savings banner shows)
-// Assets marked ❌ have net positive gain  → harvesting them INCREASES tax (no savings banner)
+// Assets marked have net negative gain → harvesting them REDUCES tax (savings banner shows)
+// Assets marked  have net positive gain  → harvesting them INCREASES tax (no savings banner)
 // ============================================================
 
 export const MOCK_HOLDINGS: Holding[] = [
   {
-    // Net = -27206.89 + 2400.15 = -24806.74 ✅ saves tax
+    // Net = -27206.89 + 2400.15 = -24806.74 saves tax
     id: 'bitcoin',
     coin: 'Bitcoin',
     coinName: 'Bitcoin',
@@ -21,10 +21,10 @@ export const MOCK_HOLDINGS: Holding[] = [
     currentPrice: 8680932,
     totalCurrentValue: 55356.85,
     stcg: { gain: -27206.89, balance: '0.338 BTC' },
-    ltcg: { gain: 2400.15,   balance: '0.300 BTC' },
+    ltcg: { gain: 2400.15, balance: '0.300 BTC' },
   },
   {
-    // Net = +55320.15 + 8239.29 = +63559 ❌ increases tax
+    // Net = +55320.15 + 8239.29 = +63559  increases tax
     id: 'ethereum',
     coin: 'Ethereum',
     coinName: 'Ethereum',
@@ -36,10 +36,10 @@ export const MOCK_HOLDINGS: Holding[] = [
     currentPrice: 164291,
     totalCurrentValue: 9324.21,
     stcg: { gain: 55320.15, balance: '2.332 ETH' },
-    ltcg: { gain: 8239.29,  balance: '3.245 ETH' },
+    ltcg: { gain: 8239.29, balance: '3.245 ETH' },
   },
   {
-    // Net = -3800 + -1500 = -5300 ✅ saves tax
+    // Net = -3800 + -1500 = -5300 saves tax
     id: 'tether',
     coin: 'Tether',
     coinName: 'Tether',
@@ -54,7 +54,7 @@ export const MOCK_HOLDINGS: Holding[] = [
     ltcg: { gain: -1500.0, balance: '902.47 USDT' },
   },
   {
-    // Net = -9200 + -4750.5 = -13950 ✅ saves tax
+    // Net = -9200 + -4750.5 = -13950 saves tax
     id: 'solana',
     coin: 'Solana',
     coinName: 'Solana',
@@ -65,11 +65,11 @@ export const MOCK_HOLDINGS: Holding[] = [
     avgBuyPrice: 6500,
     currentPrice: 12750,
     totalCurrentValue: 7324.56,
-    stcg: { gain: -9200.0,  balance: '22.1 SOL' },
+    stcg: { gain: -9200.0, balance: '22.1 SOL' },
     ltcg: { gain: -4750.5, balance: '20.4 SOL' },
   },
   {
-    // Net = -1200 + 2400 = +1200 ❌ increases tax
+    // Net = -1200 + 2400 = +1200  increases tax
     id: 'polygon',
     coin: 'Polygon',
     coinName: 'Polygon',
@@ -81,10 +81,10 @@ export const MOCK_HOLDINGS: Holding[] = [
     currentPrice: 215,
     totalCurrentValue: 4672.12,
     stcg: { gain: -1200.0, balance: '802 MATIC' },
-    ltcg: { gain: 2400.0,  balance: '1402 MATIC' },
+    ltcg: { gain: 2400.0, balance: '1402 MATIC' },
   },
   {
-    // Net = -5400 + -1100 = -6500 ✅ saves tax
+    // Net = -5400 + -1100 = -6500 saves tax
     id: 'cardano',
     coin: 'Cardano',
     coinName: 'Cardano',
@@ -99,7 +99,7 @@ export const MOCK_HOLDINGS: Holding[] = [
     ltcg: { gain: -1100.0, balance: '5500 ADA' },
   },
   {
-    // Net = -850 + 1600 = +750 ❌ increases tax
+    // Net = -850 + 1600 = +750  increases tax
     id: 'ripple',
     coin: 'XRP',
     coinName: 'XRP',
@@ -114,7 +114,7 @@ export const MOCK_HOLDINGS: Holding[] = [
     ltcg: { gain: 1600.0, balance: '4700 XRP' },
   },
   {
-    // Net = -4850.25 + 3200.45 = -1649.80 ✅ saves tax
+    // Net = -4850.25 + 3200.45 = -1649.80 saves tax
     id: 'binancecoin',
     coin: 'BNB',
     coinName: 'BNB',
@@ -126,10 +126,10 @@ export const MOCK_HOLDINGS: Holding[] = [
     currentPrice: 42000,
     totalCurrentValue: 7850.32,
     stcg: { gain: -4850.25, balance: '6.2 BNB' },
-    ltcg: { gain: 3200.45,  balance: '9.2 BNB' },
+    ltcg: { gain: 3200.45, balance: '9.2 BNB' },
   },
   {
-    // Net = +850.15 + -420.3 = +429 ❌ increases tax
+    // Net = +850.15 + -420.3 = +429  increases tax
     id: 'dogecoin',
     coin: 'Dogecoin',
     coinName: 'Dogecoin',
@@ -140,11 +140,11 @@ export const MOCK_HOLDINGS: Holding[] = [
     avgBuyPrice: 6.5,
     currentPrice: 12.8,
     totalCurrentValue: 2210.45,
-    stcg: { gain: 850.15,  balance: '6500 DOGE' },
+    stcg: { gain: 850.15, balance: '6500 DOGE' },
     ltcg: { gain: -420.3, balance: '8000 DOGE' },
   },
   {
-    // Net = +420.5 + -150.1 = +270 ❌ increases tax
+    // Net = +420.5 + -150.1 = +270  increases tax
     id: 'chainlink',
     coin: 'Chainlink',
     coinName: 'Chainlink',
@@ -155,11 +155,11 @@ export const MOCK_HOLDINGS: Holding[] = [
     avgBuyPrice: 650,
     currentPrice: 1250,
     totalCurrentValue: 1850.21,
-    stcg: { gain: 420.5,  balance: '50 LINK' },
+    stcg: { gain: 420.5, balance: '50 LINK' },
     ltcg: { gain: -150.1, balance: '70.5 LINK' },
   },
   {
-    // Net = -230.15 + 680.9 = +450 ❌ increases tax
+    // Net = -230.15 + 680.9 = +450  increases tax
     id: 'avalanche-2',
     coin: 'Avalanche',
     coinName: 'Avalanche',
@@ -171,10 +171,10 @@ export const MOCK_HOLDINGS: Holding[] = [
     currentPrice: 2450,
     totalCurrentValue: 1240.56,
     stcg: { gain: -230.15, balance: '15 AVAX' },
-    ltcg: { gain: 680.9,   balance: '20.8 AVAX' },
+    ltcg: { gain: 680.9, balance: '20.8 AVAX' },
   },
   {
-    // Net = +290.4 + -120.5 = +169 ❌ increases tax
+    // Net = +290.4 + -120.5 = +169  increases tax
     id: 'uniswap',
     coin: 'Uniswap',
     coinName: 'Uniswap',
@@ -185,11 +185,11 @@ export const MOCK_HOLDINGS: Holding[] = [
     avgBuyPrice: 350,
     currentPrice: 620,
     totalCurrentValue: 1150.89,
-    stcg: { gain: 290.4,  balance: '80.4 UNI' },
+    stcg: { gain: 290.4, balance: '80.4 UNI' },
     ltcg: { gain: -120.5, balance: '100 UNI' },
   },
   {
-    // Net = -4310.2 + 850.5 = -3459.70 ✅ saves tax
+    // Net = -4310.2 + 850.5 = -3459.70 saves tax
     id: 'litecoin',
     coin: 'Litecoin',
     coinName: 'Litecoin',
@@ -201,10 +201,10 @@ export const MOCK_HOLDINGS: Holding[] = [
     currentPrice: 6800,
     totalCurrentValue: 1480.12,
     stcg: { gain: -4310.2, balance: '8.5 LTC' },
-    ltcg: { gain: 850.5,   balance: '10 LTC' },
+    ltcg: { gain: 850.5, balance: '10 LTC' },
   },
   {
-    // Net = -2960.2 + -180.4 = -3140.60 ✅ saves tax
+    // Net = -2960.2 + -180.4 = -3140.60 saves tax
     id: 'polkadot',
     coin: 'Polkadot',
     coinName: 'Polkadot',
@@ -216,10 +216,10 @@ export const MOCK_HOLDINGS: Holding[] = [
     currentPrice: 480,
     totalCurrentValue: 1320.45,
     stcg: { gain: -2960.2, balance: '100.5 DOT' },
-    ltcg: { gain: -180.4,  balance: '140 DOT' },
+    ltcg: { gain: -180.4, balance: '140 DOT' },
   },
   {
-    // Net = +320.15 + -110.4 = +209 ❌ increases tax
+    // Net = +320.15 + -110.4 = +209  increases tax
     id: 'shiba-inu',
     coin: 'Shiba Inu',
     coinName: 'Shiba Inu',
@@ -230,7 +230,7 @@ export const MOCK_HOLDINGS: Holding[] = [
     avgBuyPrice: 0.00065,
     currentPrice: 0.0018,
     totalCurrentValue: 980.56,
-    stcg: { gain: 320.15,  balance: '20000000 SHIB' },
+    stcg: { gain: 320.15, balance: '20000000 SHIB' },
     ltcg: { gain: -110.4, balance: '25000000 SHIB' },
   },
 ];

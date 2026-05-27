@@ -650,14 +650,14 @@
 .asset-name {
   font-size: 0.875rem;
   font-weight: 700;
-  color: #0f172a;
+  color: var(--color-text-primary);
   line-height: 1.2;
 }
 
 .asset-symbol {
   font-size: 0.75rem;
   font-weight: 600;
-  color: #94a3b8;
+  color: var(--color-text-muted);
   margin-top: 2px;
 }
 
@@ -665,14 +665,14 @@
 .cell-primary {
   font-size: 0.875rem;
   font-weight: 700;
-  color: #0f172a;
+  color: var(--color-text-primary);
   line-height: 1.2;
 }
 
 .cell-secondary {
   font-size: 0.75rem;
   font-weight: 600;
-  color: #94a3b8;
+  color: var(--color-text-muted);
   margin-top: 2px;
 }
 
@@ -693,12 +693,12 @@
 .amount-to-sell {
   font-size: 0.875rem;
   font-weight: 700;
-  color: #334155;
+  color: var(--color-text-primary);
   text-align: right;
 }
 
 .amount-dash {
-  color: #94a3b8;
+  color: var(--color-text-muted);
   font-weight: 500;
   text-align: right;
   display: block;
@@ -1145,3 +1145,126 @@
   border-bottom-color: #334155;
 }
 
+/* ============================================================
+   Dark Theme — Missing cell & layout overrides
+   ============================================================ */
+
+/* Page title */
+[data-theme="dark"] .page-title {
+  color: var(--color-text-primary);
+}
+
+/* Holdings section title */
+[data-theme="dark"] .holdings-title {
+  color: var(--color-text-primary);
+}
+
+[data-theme="dark"] .holdings-header {
+  background: transparent;
+}
+
+/* Search bar */
+[data-theme="dark"] .search-wrap {
+  background: #151a25;
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .search-input {
+  background: transparent;
+  color: var(--color-text-primary);
+}
+
+[data-theme="dark"] .search-input::placeholder {
+  color: var(--color-text-muted);
+}
+
+[data-theme="dark"] .search-icon {
+  color: var(--color-text-muted);
+}
+
+/* Asset cell — coin name & symbol */
+[data-theme="dark"] .asset-name {
+  color: var(--color-text-primary);
+}
+
+[data-theme="dark"] .asset-symbol {
+  color: var(--color-text-muted);
+}
+
+/* Two-line th header (Holdings / Avg Buy Price) */
+[data-theme="dark"] .th-two-line {
+  color: var(--color-text-secondary);
+}
+
+[data-theme="dark"] .th-sub {
+  color: var(--color-text-muted);
+}
+
+/* Amount to sell column */
+[data-theme="dark"] .amount-to-sell {
+  color: var(--color-text-primary);
+}
+
+[data-theme="dark"] .amount-dash {
+  color: var(--color-text-muted);
+}
+
+/* View all footer background */
+[data-theme="dark"] .view-all-footer {
+  border-top-color: var(--color-border);
+  background: var(--color-bg-card);
+}
+
+/* Gain colors stay the same in dark (already visible) */
+
+/* App header in dark */
+[data-theme="dark"] .app-header {
+  background: var(--color-bg-card);
+  border-bottom-color: var(--color-border);
+}
+
+/* App root background */
+[data-theme="dark"] .app-root {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+}
+
+/* Holdings section wrapper */
+[data-theme="dark"] .holdings-section {
+  background: transparent;
+}
+
+/* How it works popover */
+[data-theme="dark"] .how-it-works-popover {
+  background: #1e293b;
+  border-color: #334155;
+  color: var(--color-text-primary);
+}
+
+[data-theme="dark"] .popover-arrow {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+[data-theme="dark"] .popover-list li {
+  color: var(--color-text-secondary);
+}
+
+[data-theme="dark"] .popover-pro-tip {
+  color: var(--color-text-muted);
+  border-top-color: #334155;
+}
+
+/* Empty state */
+[data-theme="dark"] .empty-state-title {
+  color: var(--color-text-primary);
+}
+
+[data-theme="dark"] .empty-state-msg {
+  color: var(--color-text-muted);
+}
+
+/* Error / retry */
+[data-theme="dark"] .btn-retry {
+  background: #0052fe;
+}
