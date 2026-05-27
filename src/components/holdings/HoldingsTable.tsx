@@ -182,19 +182,19 @@ interface HoldingsTableProps {
   holdings?: Holding[];
 }
 
-const ROWS_VISIBLE_DEFAULT = 5;
+const ROWS_VISIBLE_DEFAULT = 4;
 
 export function HoldingsTable({ isLoading, isError, holdings = [] }: HoldingsTableProps) {
-  const selectedHoldingIds  = useHarvestingStore((s) => s.selectedHoldingIds);
-  const searchQuery         = useHarvestingStore((s) => s.searchQuery);
-  const showAll             = useHarvestingStore((s) => s.showAll);
-  const sortField           = useHarvestingStore((s) => s.sortField);
-  const sortDirection       = useHarvestingStore((s) => s.sortDirection);
-  const toggleHolding       = useHarvestingStore((s) => s.toggleHolding);
-  const clearAllHoldings    = useHarvestingStore((s) => s.clearAllHoldings);
-  const setSearchQuery      = useHarvestingStore((s) => s.setSearchQuery);
-  const setShowAll          = useHarvestingStore((s) => s.setShowAll);
-  const toggleSort          = useHarvestingStore((s) => s.toggleSort);
+  const selectedHoldingIds = useHarvestingStore((s) => s.selectedHoldingIds);
+  const searchQuery = useHarvestingStore((s) => s.searchQuery);
+  const showAll = useHarvestingStore((s) => s.showAll);
+  const sortField = useHarvestingStore((s) => s.sortField);
+  const sortDirection = useHarvestingStore((s) => s.sortDirection);
+  const toggleHolding = useHarvestingStore((s) => s.toggleHolding);
+  const clearAllHoldings = useHarvestingStore((s) => s.clearAllHoldings);
+  const setSearchQuery = useHarvestingStore((s) => s.setSearchQuery);
+  const setShowAll = useHarvestingStore((s) => s.setShowAll);
+  const toggleSort = useHarvestingStore((s) => s.toggleSort);
   const setSelectedHoldingIds = useHarvestingStore((s) => s.setSelectedHoldingIds);
 
   // ── Filter & Sort ──────────────────────────────────────────
@@ -214,9 +214,9 @@ export function HoldingsTable({ isLoading, isError, holdings = [] }: HoldingsTab
             : b.coinName.localeCompare(a.coinName);
         }
         let valA = 0, valB = 0;
-        if      (sortField === 'stcg')  { valA = a.stcg.gain;           valB = b.stcg.gain; }
-        else if (sortField === 'ltcg')  { valA = a.ltcg.gain;           valB = b.ltcg.gain; }
-        else if (sortField === 'value') { valA = a.totalCurrentValue;   valB = b.totalCurrentValue; }
+        if (sortField === 'stcg') { valA = a.stcg.gain; valB = b.stcg.gain; }
+        else if (sortField === 'ltcg') { valA = a.ltcg.gain; valB = b.ltcg.gain; }
+        else if (sortField === 'value') { valA = a.totalCurrentValue; valB = b.totalCurrentValue; }
         return sortDirection === 'asc' ? valA - valB : valB - valA;
       });
     }
@@ -229,9 +229,9 @@ export function HoldingsTable({ isLoading, isError, holdings = [] }: HoldingsTab
   );
 
   // ── Selection state ────────────────────────────────────────
-  const selectedCount    = Object.keys(selectedHoldingIds).length;
-  const isAllSelected    = filteredHoldings.length > 0 && selectedCount === filteredHoldings.length;
-  const isIndeterminate  = selectedCount > 0 && selectedCount < filteredHoldings.length;
+  const selectedCount = Object.keys(selectedHoldingIds).length;
+  const isAllSelected = filteredHoldings.length > 0 && selectedCount === filteredHoldings.length;
+  const isIndeterminate = selectedCount > 0 && selectedCount < filteredHoldings.length;
 
   const handleSelectAll = useCallback(() => {
     if (isAllSelected || isIndeterminate) {
